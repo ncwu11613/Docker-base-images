@@ -1,0 +1,8 @@
+1.使用centos7先创建一个基础镜像 
+yang/centos7:1  
+
+2.创建jdk-tomcat镜像
+cms:1
+
+3.创建容器，指定项目目录和文件目录
+docker run -d -p 8080:8080 -v /docker/cms/webapps/:/opt/tomcat/webapps/ -v /docker/cms/logs/:/opt/tomcat/logs/ --name cms-1 cms:1
